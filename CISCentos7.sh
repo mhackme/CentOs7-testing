@@ -1292,7 +1292,7 @@ echo -e "${GREEN}Remediated:${NC} Ensure remote rsyslog messages are only accept
 #Ensure syslog-ng service is enabled
 echo
 echo -e "${RED}4.2.2.1${NC} Ensure syslog-ng service is enabled"
-yum install syslog-ng && systemctl enable syslog-ng
+yum -y install syslog-ng && systemctl enable syslog-ng
 policystatus=$?
 if [[ "$policystatus" -eq 0 ]]; then
   echo -e "${GREEN}Remediated:${NC} Ensure syslog-ng service is enabled"
@@ -1305,7 +1305,7 @@ fi
 #Ensure rsyslog or syslog-ng is installed
 echo
 echo -e "${RED}4.2.3${NC} Ensure rsyslog or syslog-ng is installed"
-yum install rsyslog && yum install syslog-ng
+yum -y install rsyslog && yum -y install syslog-ng
 policystatus=$?
 if [[ "$policystatus" -eq 0 ]]; then
   echo -e "${GREEN}Remediated:${NC} Ensure rsyslog or syslog-ng is installed"
